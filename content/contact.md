@@ -1,6 +1,6 @@
 ---
 title: Contact
-featured_image: '/images/gohugo-default-sample-hero-image.jpg'
+featured_image: 'https://epic-bhaskara-64f2f9.netlify.app/images/gohugo-default-sample-hero-image.jpg'
 omit_header_text: true
 description: We'd love to hear from you
 type: page
