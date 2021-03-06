@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  {{ partial "cards-head.html" . }}
+  <body data-no_follow_link="{{ .Params.link_nofollow }}">
+    <div class="main {{ .Params.company_name_show }}">
+      <div class="main-container">
+        <div class="company-line border-line">
+          <div class="parallelogram-left"></div>
+          <div class="parallelogram-right"></div>
+        </div>
+        <div class="company-info-wrap">
+          {{ with .Params.company_logo }}
+            <div class="company-logo">
+              <img src="{{ .img }}" alt="{{ .alt }}" id="company_logo" data-company_logo="{{ .img }}">
+            </div>
+          {{ end }}
+          <div class="company-name">
+            {{ with .Params.company_name }}
+              <h1  id="company_name" data-company_name="{{ . }}" >{{ . }}</h1>
+            {{ end }}
+            {{ with .Params.slogan }}
+              <p  id="slogan" data-slogan="{{ . }}">{{ . }}</p>
+            {{ end }}
+          </div>
+        </div>
+        <div class="company-line border-line">
+          <div class="parallelogram-left"></div>
+          <div class="parallelogram-right"></div>
+        </div>
+        <div class="person-detail-wrapper" style="background: url('{{ .Params.bg_image }}') no-repeat;background-size: cover;">
+          <div class="overlay"></div>
+          <div class="person-profile-wrap">
+            <div class="person-profile">
+              <ul id="clips">
+                <li class="one"></li>
+                <li class="two"></li>
+                <li class="three"></li>
+                <li class="four"></li>
+              </ul>
+              {{ with .Params.profile_photo }}
+                <img src="{{ .img }}" alt="{{ .alt }}" id="profile_photo" data-profile_photo="{{ . }}">
+              {{ end }} 
+            </div>
+          </div>
+        </div>
+        <div class="person-main-info">
+
+          <h2 id="full_name" data-full_name="{{ with .Params.first_name }}{{ . }}{{ end }}
+          {{ with .Params.last_name }}{{ . }}{{ end }}">{{ with .Params.first_name }}<span  id="first_name" data-first_name="{{ . }}">{{ . }}</span>{{ end }} {{ with .Params.last_name }}<span  id="last_name" data-last_name="{{ . }}">{{ . }}</span>{{ end }}</h2>
+          {{ with .Params.position }}
+            <p  id="position" data-position="{{ . }}">{{ . }}</p>
+          {{ end }}
+        </div>
+        <div class="social-info">
+          <div class="person-contact-info-wrap">
+            <div class="person-contact-info">
+              {{ with .Params.about }}
+                <p class="about"  id="about" data-about="{{ . }}">{{ . }}</p>
+              {{ end }}
+              <div class="wrap address">           
+                <span class="icon">
+                  <img src="/td001/images/address.png" alt="">
+                </span>
+                <span class="person-detail"><a   id="address" data-address="{{ with .Params.address_line_1 }}{{ . }}{{ end }}{{ with .Params.address_line_2 }}{{ . }}{{ end }}{{ with .Params.country }}{{ . }}{{ end }}{{ with .Params.state }}{{ . }}{{ end }}{{ with .Params.city }}{{ . }}{{ end }}{{ with .Params.zip_code }}{{ . }}{{ end }}">
+                  {{ with .Params.address_line_1 }}
+                    <span id="address_line_1" data-address_line_1="{{ . }}" >{{ . }}</span>
+                  {{ end }}
+                  {{ with .Params.address_line_2 }}
+                    <span id="address_line_2" data-address_line_2="{{ . }}">{{ . }}</span>
+                  {{ end }}
+                  {{ with .Params.country }}
+                    <span id="country" data-country="{{ . }}">{{ . }}</span>
+                  {{ end }}
+                  {{ with .Params.state }}
+                    <span id="state" data-state="{{ . }}">{{ . }}</span>
+                  {{ end }}
+                  {{ with .Params.city }}
+                    <span id="city" data-city="{{ . }}">{{ . }}</span>
+                  {{ end }}
+                  {{ with .Params.zip_code }}
+                    <span id="zip_code" data-zip_code="{{ . }}">{{ . }}</span>
+                  {{ end }}</a></span>
+              </div>
+              {{ with .Params.contact_no_1 }}
+              <div class="wrap phone">
+                <span class="icon">
+                  <img src="/td001/images/phone.png" alt="">
+                </span>
+                <span class="person-detail">
+                  <a href="tel:+{{ .url }}"  id="contact_no_1" data-contact_no_1="{{ .url }}">{{ .text }}</a>
+              </div>
+              {{ end }}
+              {{ with .Params.contact_no_2 }}
+              <div class="wrap phone">
+                <span class="icon">
+                  <img src="/td001/images/phone.png" alt="">
+                </span>
+                <span class="person-detail">
+                  <a href="tel:+{{ .url }}"  id="contact_no_2" data-contact_no_2="{{ .url }}">{{ .text }}</a>
+              </div>
+              {{ end }}
+              {{ with .Params.mail }}
+              <div class="wrap mail">
+                <span class="icon">
+                  <img src="/td001/images/mail.png" alt="">
+                </span>
+                <span class="person-detail"><a href="mailto:{{ .url }}" id="mail" data-mail="{{ .url }}">{{ .text }}</a></span>
+              </div>
+              {{ end }}
+              
+              {{ with .Params.website }}
+              <div class="wrap web">
+                <span class="icon">
+                  <img src="/td001/images/website.png" alt="">
+                </span>
+                <span class="person-detail"><a href="{{ .url }}" id="website" data-website="{{ .url }}">{{ .text }}</a></span>
+              </div>
+              {{ end }}
+              {{ with .Params.facebook }}
+                <div class="wrap facebook">
+                  <span class="icon">
+                    <img src="/td001/images/facebook.png" alt="">
+                  </span>
+                  <span class="person-detail"><a href="{{ .url }}" id="facebook" data-facebook="{{ .url }}">{{ .text }}</a></span>
+                </div>
+              {{ end }}
+              {{ with .Params.twitter }}
+                <div class="wrap twitter">
+                  <span class="icon">
+                    <img src="/td001/images/twitter.png" alt="">
+                  </span>
+                  <span class="person-detail"><a href="{{ .url }}" id="twitter" data-twitter="{{ .url }}">{{ .text }}</a></span>               
+                </div>
+              {{ end }}
+              {{ with .Params.linkedin }}
+                <div class="wrap linkedin">
+                  <span class="icon">
+                    <img src="/td001/images/linkedin.png" alt="">
+                  </span>
+                  <span class="person-detail"><a href="{{ .url }}" id="linkedin" data-linkedin="{{ .url }}">{{ .text }}</a></span>
+                </div>
+              {{ end }}
+              {{ with .Params.instagram }}
+                <div class="wrap instagram">
+                  <span class="icon">
+                    <img src="/td001/images/instagram.png" alt="">
+                  </span>
+                  <span class="person-detail"><a href="{{ .url }}" id="instagram " data-instagram ="{{ .url }}">{{ .text }}</a></span>
+                </div>
+              {{ end }}
+              {{ with .Params.youtube }}
+              <div class="wrap youtube">
+                <span class="icon">
+                  <img src="/td001/images/youtube.png" alt="">
+                </span>
+                <span class="person-detail"><a href="{{ .url }}" id="youtube" data-youtube="{{ .url }}">{{ .text }}</a></span>
+              </div>
+              {{ end }}
+            </div>
+          </div>
+          
+        </div>
+        <div class="border-line">
+          <div class="parallelogram-left"></div>
+          <div class="parallelogram-right"></div>
+        </div>
+        {{ partial "whatsapp-section.html" . }}
+        <div class="border-line">
+          <div class="parallelogram-left"></div>
+          <div class="parallelogram-right"></div>
+        </div>
+        {{ partial "card-footer.html" .}}
+      </div>
+    </div>
+    <script src="/js/card.js"></script>
+  </body>
+</html>

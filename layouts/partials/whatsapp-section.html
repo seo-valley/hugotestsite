@@ -1,0 +1,33 @@
+{{- if .Site.IsServer -}} {{ "<!-- Layout: partial/whatsapp.html -->" |safeHTML }} {{- end -}}
+  <div class="social-share-wrapper">
+    <ul class="social-share"> 
+      <li><a class="social-facebook-share"  href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fcard.net.in{{ .URL }}" ><div class="btn facebook-share-btn"><img src="/images/card-icon/facebook.png" alt=""></div></a></li>
+      <li><a class="social-whatsapp-share"><div class="btn whatsappshare-btn whatsapp-icon"><img src="/images/card-icon/whatsapp.png" alt=""></div></a></li>
+      <li><a class="social-share"><div class="btn social-share-btn share-icon"><img src="/images/card-icon/share.png" alt=""></div></a></li>
+    </ul>
+  </div>
+  <div class="whatsapp-input-wrapper">  
+    <div class="whatsapp-input">
+      <div class="input-wrapper">
+
+        <p id="creation_date"
+          data-creation_date='{{ dateFormat "02 January 2006 15:04:05 PM -07:00" .Params.creation_date | safeHTML }}'></p>
+        <p id="expiry_date"
+          data-expiry_date='{{ dateFormat "02 January 2006 15:04:05 PM" .Params.expiry_date | safeHTML }}'></p>
+
+
+        <label>+</label>
+        <input class="input country-text" oninput="this.value=this.value.replace(/[^0-9]/g,'');" value="91"
+          id="whatsapp-country-code">
+        <input class="input mobile-no" placeholder="Enter Mobile Number" maxlength="10"
+          oninput="this.value=this.value.replace(/[^0-9]/g,'');" id="whatsapp-input" required>
+      </div>
+      <div class="button-wrapper">
+        <a class="whatsapp-button" target="_blank">
+          <span class="share-text"> <img src="/images/card-icon/whatsapp.png" alt="whatsapp-icon"><span>Share on
+              Whatsapp</span></span>
+        </a>
+      </div>
+    </div>
+  </div>
+{{- if .Site.IsServer -}} {{ "<!-- END  Layout: partial/whatsapp-section.html -->" |safeHTML }} {{- end -}}

@@ -1,0 +1,5 @@
+<a   {{ with .Get "class" }} class="{{ . }}" {{ end }} {{- if .Get "link" -}} href="{{ .Get "link" }}" {{- end }} {{ with (.Get "title") -}}title="{{ . }}" {{- end -}}>
+  {{ with (.Get "title") -}}
+      {{ . }}
+  {{- end -}}
+</a>

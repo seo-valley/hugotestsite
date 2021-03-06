@@ -1,0 +1,21 @@
+{{ $layout := .Layout }}
+{{ $css_file_name := print "cards/" $layout ".scss" }}
+
+{{- if .Site.IsServer -}}
+  {{ "<!-- Load CSS without minification -->" | safeHTML }}
+  {{ $customCSS := resources.Get "cards/custom.scss" | toCSS }}
+  <link rel="stylesheet" media="screen" type="text/css" href="{{ $customCSS.Permalink }}" />
+  {{ $cardCSS := resources.Get $css_file_name | toCSS }}
+  <link rel="stylesheet" media="screen" type="text/css" href="{{ $cardCSS.Permalink }}" />
+
+    
+{{ else }}
+
+  {{ "<!-- Load CSS with minification and fingerprinting -->" | safeHTML }}
+  {{ $customCSS := resources.Get "cards/custom.scss" | toCSS ( dict "enableSourceMap" true ) | minify | fingerprint }}
+  <link rel="stylesheet" media="screen" type="text/css" href="{{$customCSS.Permalink }}" />
+  {{ $cardCSS := resources.Get $css_file_name | toCSS ( dict "enableSourceMap" true ) | minify | fingerprint }}
+  <link rel="stylesheet" media="screen" type="text/css" href="{{ $cardCSS.Permalink }}" />
+ 
+
+{{- end -}}

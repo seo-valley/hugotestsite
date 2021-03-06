@@ -1,0 +1,50 @@
+<!doctype html>
+<html prefix="og: http://ogp.me/ns#" lang="{{ .Language }}">
+  <head itemscope itemtype="{{ .Site.BaseURL }}">
+        <title>{{ if .Title }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="google" content="notranslate" />
+        <meta name="robots" content="noindex, nofollow">
+        <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
+        <meta name="google-site-verification" content="lslHBbAkGrwFiovcDjyiIeXppVevFhbIZR2uZWza2FU">
+        {{ with .Params.robots_content }}
+          <meta name="robots" content="{{ . }}">
+        {{ end }}
+        {{ hugo.Generator }}
+        {{- template "_internal/opengraph.html" . -}}
+        {{- template "_internal/schema.html" . -}}
+        {{- template "_internal/twitter_cards.html" . -}}
+        <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,700,700i" rel="stylesheet">
+        <link rel="stylesheet" href="{{ (resources.Get "sass/main.scss" | resources.ExecuteAsTemplate "assets/css/main.css" . | resources.ToCSS (dict "indentWidth" 4 "outputStyle" "nested" "precision" 10)).RelPermalink }}">
+          <!-- Google Tag Manager -->
+          <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-PSKNFG3');</script>
+          <!-- End Google Tag Manager -->
+          {{ template "_internal/google_analytics.html" . }}
+          {{ template "_internal/google_analytics_async.html" . }}
+          <meta name="robots" content="index,follow" />
+          <meta name="googlebot" content="index,follow" />
+          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+          
+    </head>
+    <body>
+        <div id="page" class="site palette-{{ .Site.Params.color_scheme }} accent-{{ .Site.Params.accent_color }}">
+          {{ partial "header.html" . }}
+          <main id="content" class="site-content">
+            {{ block "content" . }}{{ end }}
+          </main><!-- .site-content -->
+          {{ partial "footer.html" . }}
+        </div><!-- .site -->
+        <!-- Scripts -->
+        <script src="{{ "assets/js/plugins.js" | relURL }}"></script>
+        <script src="{{ "assets/js/main.js" | relURL }}"></script>
+        <script src="/js/main.js"></script>
+        
+    </body>
+</html>

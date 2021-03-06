@@ -1,0 +1,20 @@
+{{ define "content" }}
+  <div class="outer">
+    <div class="inner sitemap">
+      <h1 class="post-title line-top1">{{ .Title }}</h1>
+      <ul  class="multi-col">
+      {{ range .Params.sitemap_section }}
+        <li class="mainpage"><h2><a href="{{ .url }}">{{ .title }}</a></h2>
+        
+          {{ $sectiontype:= .type }}
+          {{ range where $.Site.RegularPages "Type" $sectiontype }}
+          <ul class="innerpage">
+            <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+          </ul>
+          {{ end}}
+        </li>
+      {{ end }}
+      </ul>
+    </div>
+  </div>
+{{ end }}

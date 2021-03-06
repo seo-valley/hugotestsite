@@ -1,0 +1,10 @@
+{{- if .Site.IsServer -}} {{ "<!-- Layout: partial/seo.html -->" |safeHTML }} {{- end -}}
+{{ hugo.Generator }}
+{{- template "_internal/opengraph.html" . -}}
+{{- template "_internal/schema.html" . -}}
+{{- template "_internal/twitter_cards.html" . -}}
+{{- template "_internal/google_analytics.html" . -}}
+{{- if eq .Params.no_index true -}}
+  <meta name="robots" content="noindex, nofollow" />
+{{- end -}}
+{{- if .Site.IsServer -}} {{ "<!-- END Layout: partial/seo.html -->" |safeHTML }} {{- end -}}

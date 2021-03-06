@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  {{ partial "cards-head.html" .}}
+  <body data-no_follow_link="{{ .Params.link_nofollow }}">
+    <div class="main {{ .Params.company_name_show }}">
+      <div class="main-container">
+        
+        <div class="fancy-line-wrap">
+          
+          <div class="silverline silverline-1"></div>
+          <div class="silverline silverline-2"></div>
+          <div class="silverline silverline-3"></div>
+          <div class="silverline silverline-4"></div>
+          <div class="goldenline goldenline-1"></div>
+          <div class="goldenline goldenline-2"></div>
+          <div class="goldenline goldenline-3"></div>
+          <!-- <div class="goldenline goldenline-4"></div> -->
+          <div class="company-details">
+            <div class="logo">
+              {{ with .Params.company_logo }}
+              <!-- <img src="/images/logo.png" alt=""> -->
+              <img src="{{ .img }}" alt="{{ .alt }}"  id="company_logo" data-company_logo="{{ .img }}">
+              {{ end }}
+              
+            </div>
+            {{ with .Params.company_name }}
+              <h1 class="company-name" id="company_name" data-company_name="{{ . }}">{{ . }}</h1>
+            {{ end }}
+            {{ with .Params.slogan }}
+              <p class="company-tagline" id="slogan" data-slogan="{{ . }}" >{{ . }}</p>
+            {{ end }}
+          </div>
+        </div>
+        <div class="person-main-info-wrap">
+          <div class="person-info">
+            <div class="shape-wrap">
+              <div class="circle border-circle circle-1"></div>
+              <div class="circle circle-black circle-1"></div>
+              <div class="circle gold-circle circle-1"></div>
+              <div class="border-circle-gold circle-1"></div>
+              <div class="border-circle-gold circle-2"></div>
+
+            </div>
+            {{ with .Params.profile_photo }}
+              <img src="{{ .img }}" alt="{{ .text }}" id="profile_photo" data-profile_photo="{{ .img }}">
+            {{ end }}
+            <h2 id="full_name" data-full_name="{{ with .Params.first_name }}{{ . }}{{ end }}
+              {{ with .Params.last_name }}{{ . }}{{ end }}">
+              {{ with .Params.first_name }}
+              <span id="first_name" data-first_name="{{ . }}">{{ . }}</span> 
+             {{ end }}  
+             {{ with .Params.last_name }}
+               <span id="last_name" data-last_name="{{ . }}">{{ . }}</span>
+             {{ end }}</h2>
+             {{ with .Params.position }}
+                <p class="" id="position" data-position="{{ . }}">{{ . }}</p>
+             {{ end }}
+             <div class="border-class"></div>
+            
+             {{ with .Params.about }}
+                <p class="about"  id="about" data-about="{{ . }}">{{ . }}</p>
+             {{ end }}
+          </div>
+          <div class="person-contact-info">
+            <div class="shape-wrap">
+              <div class="circle border-circle circle-1"></div>
+              <div class="circle circle-black circle-1"></div>
+              <div class="circle gold-circle circle-1"></div>
+              <div class="border-circle-gold circle-1"></div>
+
+            </div>
+            <div class="link address">
+              <span class="person-detail"><a id="address" data-address="{{ with .Params.address_line_1 }}{{ . }}{{ end }}{{ with .Params.address_line_2 }}{{ . }}{{ end }}{{ with .Params.country }}{{ . }}{{ end }}{{ with .Params.state }}{{ . }}{{ end }}{{ with .Params.city }}{{ . }}{{ end }}{{ with .Params.zip_code }}{{ . }}{{ end }}">
+              {{ with .Params.address_line_1 }}
+                <span id="address_line_1" data-address_line_1="{{ . }}" >{{ . }}</span>
+              {{ end }}
+              {{ with .Params.address_line_2 }}
+                <span id="address_line_2" data-address_line_2="{{ . }}">{{ . }}</span>
+              {{ end }}
+              {{ with .Params.city }}
+                <span id="city" data-city="{{ . }}">{{ . }}</span>
+              {{ end }}   
+              {{ with .Params.state }}
+                <span id="state" data-state="{{ . }}">{{ . }}</span>
+              {{ end }}
+              {{ with .Params.country }}
+                <span id="country" data-country="{{ . }}">{{ . }}</span>
+              {{ end }}
+              {{ with .Params.zip_code }}
+                <span id="zip_code" data-zip_code="{{ . }}">{{ . }}</span>
+              {{ end }}
+              </a></span>
+              <span class="icon"><img
+                src="/td004/images/address.png" />
+              </span> 
+            </div>
+            {{ with .Params.contact_no_1 }}
+              <div class="link phone">
+                <span class="person-detail">
+                    <a href="tel:+{{ .url }}" id="contact_no_1" data-contact_no_1="{{ .url }}">{{ .text }}</a>
+                </span>
+                <span class="icon"><img src="/td004/images/phone.png" />
+                </span>
+              </div>
+            {{ end }}
+
+            {{ with .Params.contact_no_2 }}
+              <div class="link phone">
+                <span class="person-detail">
+                  <a href="tel:+{{ .url }}"  id="contact_no_2" data-contact_no_2="{{ .url }}" >{{ .text }}</a>
+                </span>
+                <span class="icon"><img src="/td004/images/phone.png" />
+                </span>
+              </div>
+            {{ end }}
+            {{ with .Params.website }}
+            <div class="link web">
+              <span class="person-detail"><a href="{{ .url }}"  id="website" data-website="{{ .url }}">{{ .text }}</a></span>
+              <span class="icon"><img src="/td004/images/website.png" />
+              </span>
+            </div>
+            {{ end }}
+            {{ with .Params.mail }}
+            <div class="link mail">
+              <span class="person-detail"><a href="mailto:{{ .url }}" id="mail" data-mail="{{ .url }}">{{ .text }}</a></span>
+              <span class="icon"><img src="/td004/images/mail.png" />
+              </span>
+            </div>
+            {{ end }}
+            {{ with .Params.facebook }}
+            <div class="link facebook">
+              <span class="person-detail"><a href="{{ .url }}"  id="facebook" data-facebook="{{ .url }}">{{ .text }}</a></span>
+              <span class="icon"><img src="/td004/images/facebook.png" />
+              </span>
+            </div>
+            {{ end }}
+            {{ with .Params.twitter }}
+            <div class="link twitter">
+              <span class="person-detail"><a href="{{ .url }}"  id="twitter" data-twitter="{{ .url }}">{{ .text }}</a></span>
+              <span class="icon">
+              <img src="/td004/images/twitter.png" />
+              </span>
+            </div>
+            {{ end }}
+            {{ with .Params.linkedin }}
+            <div class="link linkedin">
+              <span class="person-detail"><a href="{{ .url }}" id="linkedin" data-linkedin="{{ .url }}">{{ .text }}</a></span>
+              <span class="icon"><img src="/td004/images/linkedin.png" />
+              </span>
+            </div>
+            {{ end }}
+            {{ with .Params.instagram }}
+            <div class="link instagram">
+              <span class="person-detail"><a href="{{ .url }}" id="instagram" data-instagram="{{ .url }}">{{ .text }}</a></span>
+              <span class="icon"><img src="/td004/images/instagram.png" />
+              </span>
+            </div>
+            {{ end }}
+            {{ with .Params.youtube }}
+            <div class="link youtube">
+              <span class="person-detail"><a href="{{ .url }}" id="youtube" data-youtube="{{ .url }}">{{ .text }}</a></span>
+              <span class="icon"><img src="/td004/images/youtube.png" />
+              </span>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+       {{ partial "whatsapp-section.html" .}}
+       {{ partial "card-footer.html" .}}
+      </div>
+      <!-- end main-container -->
+    </div>
+    <script src="/js/card.js"></script>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+{{- if .Site.IsServer -}} {{ "<!-- Layout: partial/cards-head.html -->" |safeHTML }} {{- end -}}
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"  content="width=device-width, initial-scale=1.0">
+    {{ partial "seo.html" . }}
+    <title>{{ block "title" . }}{{ .Title | default .Site.Title }}{{ end }}</title>
+    {{ partial "include-css.html" . }}
+    
+    {{ range .AlternativeOutputFormats -}}
+      <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink | safeURL }}">
+    {{ end -}}
+    <link rel="canonical" href="{{ .Permalink }}">
+  </head>
+{{- if .Site.IsServer -}} {{ "<!-- END Layout: partial/cards-head.html -->" |safeHTML }} {{- end -}}

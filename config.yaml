@@ -1,0 +1,89 @@
+---
+title: think design digital strategy
+baseURL: https://thinkdesign.com/
+languageCode: en-us
+DefaultContentLanguage: en
+mediaTypes:
+  application/json:
+    suffixes:
+    - json
+outputFormats:
+  JSON:
+    baseName: manifest
+    isPlainText: true
+    rel: manifest
+    mediaType: application/json
+outputs:
+  home:
+  - HTML
+  - JSON
+  page:
+  - HTML
+  - JSON
+params:
+  description: We are a website design & digital marketing agency with over 20 years
+    of experience in building results-driven, custom web-based solutions. We build
+    the most effective informational and e-commerce web sites for your enterprise
+    and brand through our immersive strategy.
+  address: 118 W 22nd Street, 12th Floor, New York, NY 10011
+  email: info@thinkdesign.com
+  phone_url: "+19174760952"
+  phone_text: "+19174760952"
+  footer_about: We are a website design & digital marketing agency with over 20 years
+    of experience in building results-driven, custom web-based solutions.
+  enableRobotsTXT: true
+  color_scheme: light
+  accent_color: violet
+  header:
+    title: think design
+    has_nav: true
+    logo_img: "/images/think-design.png"
+  footer:
+    content: "&copy; All rights reserved."
+    links:
+    - text: think design
+      url: https://thinkdesign.com
+      new_window: false
+    has_social: true
+disableKinds:
+  - RSS
+markup:
+  goldmark:
+    extensions:
+      definitionList: true
+      footnote: true
+      linkify: true
+      strikethrough: true
+      table: true
+      taskList: true
+      typographer: true
+    parser:
+      attribute: true
+      autoHeadingID: true
+      autoHeadingIDType: github
+    renderer:
+      hardWraps: false
+      unsafe: true
+      xhtml: false
+menu:
+  main:
+  - name:
+  footer:
+  - url: "/contact/"
+    name: Contact
+    weight: 16
+  - url: "/sitemap/"
+    name: Site Map
+    weight: 6
+  - url: "/about/"
+    name: About
+    weight: 4
+  - url: "/blog/"
+    name: Blog
+    weight: 3
+  - url: "/portfolio/"
+    name: Case Studies
+    weight: 2
+  - url: "/services/"
+    name: Services
+    weight: 1

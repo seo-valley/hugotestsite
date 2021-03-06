@@ -1,0 +1,15 @@
+{
+  "name": "{{ .Title | default "CardNet" }}",
+  "short_name": "{{ .Params.app_name |  default .Title }}",
+  "start_url": "{{ .Permalink }}",
+  "display": "standalone",
+  "background_color": "#fff",
+  "orientation": "portrait-primary",
+  "description": "{{ .Description }} | default 'CardNet - Digital Visiting Card'",
+  "icons": [
+      {
+        "src": "{{ .Params.app_icon }}",
+        "sizes": "114x114"
+      }
+    ]
+}

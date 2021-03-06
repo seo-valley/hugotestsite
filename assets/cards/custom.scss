@@ -1,0 +1,159 @@
+/* Social Share  */
+.social-share-wrapper{
+  padding: 10px;
+} 
+.social-share{
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+.social-share li{
+  margin-left: 15px;
+}
+.social-share a{
+  display: block;
+  cursor: pointer;
+
+}
+.btn{
+  width: 35px;
+  height: 35px;
+  position: relative;
+  border-radius: 50%;
+}
+.facebook-share-btn{
+  background: #1877f2; 
+}
+.social-share img{
+  position: absolute;
+  width: 20px;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+
+.share-icon img {
+  transform: translate(-55%, -48%);
+}
+
+.whatsapp-icon img {
+  transform: translate(-44%, -50%);
+}
+
+.whatsappshare-btn{
+  background: #01e675;
+}
+.social-share-btn{
+  background: #000;
+}
+
+/*  Whats app share*/
+.whatsapp-input-wrapper{
+  padding: 10px 30px 30px;
+
+}
+.whatsapp-input{
+  width: 100%;
+ 
+}
+.input-wrapper{
+  justify-content: center;
+  display: flex;
+  position: relative;
+ 
+}
+.input-wrapper input{
+  -webkit-appearance: none;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  outline: none;
+  position: relative;
+  font-size: 14px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2), 0 0 40px rgba(255, 251, 251, 0.1) inset;
+}
+::placeholder { 
+  font-size: 14px;
+}
+
+.input-wrapper .mobile-no{
+  width: 100%;
+
+}
+.input-wrapper .country-text{
+  width: 20px;
+  margin-right: 10px;
+  margin-left: 15px;
+}
+.share-text{
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+}
+.input-wrapper label{
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.whatsapp-button{
+  padding: 10px 10px 10px 10px;
+  background-color: #01e675;
+  opacity: 0.9;
+  display: block;
+  color: #fff;
+  border: none;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2), 0 0 40px rgba(255, 251, 251, 0.1) inset;
+  margin-top: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.whatsapp-button img{
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+
+/* Footer */
+footer{
+  width: 100%;
+
+}
+
+.wrapper{
+  max-width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 15px;
+}
+
+.wrapper a,.card-footer-link{
+  color: #fff;
+  font-size: 14px;
+  letter-spacing: 1px;
+  display: inline-block;
+}
+
+.card-footer-link{
+  color: #dfd07f;
+  transition: all .5s ease-in;
+}
+
+.card-footer-link:hover{
+  color: #fff;
+}
+
+.show #company_name {
+  display: none;
+}
+
+#full_name.show {
+  display: none;
+}
+
+
+
+
+

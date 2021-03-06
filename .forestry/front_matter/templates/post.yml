@@ -1,0 +1,63 @@
+---
+label: Post
+hide_body: false
+fields:
+- type: text
+  name: title
+  label: Title
+  description: The title of the post
+  config:
+    required: true
+- type: text
+  name: subtitle
+  label: Subtitle
+  description: The text shown just below the post title.
+- type: datetime
+  name: date
+  label: Date
+  config:
+    required: true
+- type: file
+  name: thumb_img_path
+  label: Featured Image
+  description: The image shown in the blog feed.
+- type: file
+  name: content_img_path
+  label: Alternative Featured Image
+  description: The image shown in the single post.
+- type: text
+  name: excerpt
+  label: Excerpt
+  description: The excerpt of the post displayed in the blog feed.
+- type: text
+  name: layout
+  label: Layout
+  hidden: true
+  default: post
+  config:
+    required: true
+- name: description
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Description
+pages:
+- content/posts/Hawlsey-Lewis-Holds-Bed-Stuy-Together.md
+- content/posts/ask-these-5-questions-to-improve-online-communication.md
+- content/posts/consultant-as-an-agent-of-change.md
+- content/posts/digital-in-dementia.md
+- content/posts/five-things-i-love-about-being-in-new-york-city-this-year.md
+- content/posts/how-website-optimization-firms-can-boost-your-retail-sales.md
+- content/posts/making-my-website-perform-better-during-covid.md
+- content/posts/sandra-elkin-on-the-precipice.md
+- content/posts/store-owners-maintain-your-income-stream-during-the-lockdown-1.md
+- content/posts/the-iphone-and-the-teenage-brain.md
+- content/posts/the-tale-of-buswick-s-bushy-tails.md
+- content/posts/think-design-stands-with-those-who-agree-that-black-lives-matter.md
+- content/posts/unlock-the-value-of-your-organization-s-data.md
+- content/posts/why-build-an-e-commerce-site-with-no-cart.md
+- content/posts/why-ecommerce-website-design-services-are-vital-for-online-businesses.md

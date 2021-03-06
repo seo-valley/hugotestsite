@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  {{ partial "cards-head.html" .}}
+  <body data-no_follow_link="{{ .Params.link_nofollow }}">
+    <div class="main {{ .Params.company_name_show }}">
+      <div class="main-container">
+        <div class="shape-wrap">
+          <div class="shape-1"></div>
+          <div class="shape-2"></div>
+          <div class="shape-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="600" height="1000" viewBox="0 0 709 1000">
+              <defs>
+                <style>
+                  .cls-1 {
+                  fill: #fede2d;
+                  fill-rule: evenodd;
+                  }
+                </style>
+              </defs>
+              <path id="Shape" class="cls-1" d="M-111.994,1095.88c88.174-.32,176.353-0.19,264.531-0.06C171.346,991.9,97.915,858.24,76.523,768.447c-44.22-185.612,8.223-385.6,138.827-524.189,87.83-93.2,201.233-162.364,321.524-205.043C652.838-1.93,779.123-11.113,899.566,14.866c-0.149-116.687-.274-233.383.3-350.064-37.6,1.315-75.363.628-112.928,0.881-47.287.32-94.572,0.685-141.859,0.759q-108.352.171-216.7,0.314c12.738,41.259,6.162,87.6-7.813,127.872C359.657-29.841,196.405,94.082,74.832,226.441,6.041,301.336-61.311,383.676-115.557,472.657q0.159,126.792.286,253.585,0.147,172.287.293,344.578,0.01,12.525.021,25.07C-113.969,1095.89-112.982,1095.88-111.994,1095.88Z"/>
+            </svg>
+          </div> 
+          <div class="box shape-6"></div>
+          <div class="box shape-7 red-box"></div>
+          <div class="small-box shape-8"></div>
+          <div class="white-dot"></div>
+          <!-- <div class="shape-4"></div> -->
+        </div>
+        <div class="company-info-wrap">
+          <div class="company-info">
+            <div class="company-logo">
+              {{ with .Params.company_logo }}
+                <img src="{{ .img }}" alt="{{ .alt }}" id="company_logo" data-company_logo="{{ .img }}">
+              {{ end }}
+            </div>
+            {{ with .Params.company_name }}
+              <h1 id="company_name" data-company_name="{{ . }}">{{ . }}</h1>
+            {{ end }}
+            {{ with .Params.slogan }}
+              <p class="slogan" id="slogan" data-slogan="{{ . }}" >{{ . }}</p>
+            {{ end }}
+          </div>
+        </div>
+        <div class="shape-wrap">
+          <div class="close close-shape-1"></div>
+          <div class="close close-shape-2"></div>
+          <div class="triangle">
+          </div>
+        </div>
+        <div class="person-main-info-wrap">
+          <div class="person-main-info">
+            {{ with .Params.profile_photo }}
+              <img src="{{ .img }}" alt="{{ .alt }}" id="profile_photo" data-profile_photo="{{ .img }}">
+            {{ end }}
+            <h2 class="person-name" class="title" id="full_name" data-full_name="{{ with .Params.first_name }}{{ . }}{{ end }}
+            {{ with .Params.last_name }}{{ . }}{{ end }}"> 
+            {{ with .Params.first_name }}
+              <span id="first_name" data-first_name="{{ . }}">{{ . }}</span>
+            {{ end }} 
+            {{ with .Params.last_name }}
+              <span id="last_name" data-last_name="{{ . }}">{{ . }}</span>
+            {{ end }}
+            </h2>
+            {{ with .Params.position }}
+              <p class="position" id="position" data-position="{{ . }}">{{ . }}</p>
+            {{ end }}
+          </div>
+          {{ with .Params.about }}
+          <div class="person-about">
+              <p class="about"  id="about" data-about="{{ . }}">{{ . }}</p>
+          </div>
+        {{ end }}
+          <div class="person-contact-info-wrap">
+            <div class="person-contact-info">
+              {{ with .Params.contact_no_1 }}
+                <p class="phone-no"><a href="tel:+{{ .url }}" ><span id="contact_no_1" data-contact_no_1="{{ .url }}">{{ .text }}</span> </a> </p>
+              {{ end }}
+
+              {{ with .Params.contact_no_2 }}
+                <p class="phone-no"><a href="tel:+{{ .url }}" ><span id="contact_no_2" data-contact_no_2="{{ .url }}">{{ .text }}</span> </a> </p>
+              {{ end }}
+              {{ with .Params.mail }}
+                <p class="mail"><a href="mailto:{{ .url }}" >
+                  <span id="mail" data-mail="{{ .url }}">{{ .text }} </span> </a></p>
+              {{ end }}
+              <p><a><span id="address" data-address="{{ with .Params.address_line_1 }}{{ . }}{{ end }}{{ with .Params.address_line_2 }}{{ . }}{{ end }}{{ with .Params.country }}{{ . }}{{ end }}{{ with .Params.state }}{{ . }}{{ end }}{{ with .Params.city }}{{ . }}{{ end }}{{ with .Params.zip_code }}{{ . }}{{ end }}">{{ with .Params.address_line_1 }}
+                <span id="address_line_1" data-address_line_1="{{ . }}" >{{ . }}</span>
+              {{ end }}
+              {{ with .Params.address_line_2 }}
+                <span id="address_line_2" data-address_line_2="{{ . }}">{{ . }}</span>
+              {{ end }}
+              {{ with .Params.city }}
+              <span id="city" data-city="{{ . }}">{{ . }}</span>
+              {{ end }}   
+              {{ with .Params.state }}
+                <span id="state" data-state="{{ . }}">{{ . }}</span>
+              {{ end }}
+              {{ with .Params.country }}
+                <span id="country" data-country="{{ . }}">{{ . }}</span>
+              {{ end }}
+              {{ with .Params.zip_code }}
+                <span id="zip_code" data-zip_code="{{ . }}">{{ . }}</span>
+              {{ end }}</span></a></p>
+            </div>
+          </div>
+        </div>
+        <div class="shape-wrap">
+          <div class="shape-3"></div>
+          <div class="shape-5"></div>
+          <div class="box shape-7 red-box-right"></div>
+          <div class="box shape-7 red-box-left"></div>
+          <div class="box shape-7 red-box-center"></div>
+          <div class="small-box shape-9"></div>
+          <div class="dot dot-shape-1"></div>
+          <div class="dot dot-shape-2"></div>
+          <div class="dot dot-shape-3"></div>
+          <div class="small-box shape-10"></div>
+          <div class="yellow-dot"></div>
+        </div>
+        <div class="social-info-wrap">
+          <div class="social-info">
+            {{ with .Params.facebook }}
+            <div class="wrap facebook">
+              <span class="icon"><img src="/td002/images/facebook.png" /></span>
+              <span class="person-detail"><a href="{{ .url }}" id="facebook" data-facebook="{{ .url }}">{{ .text }}</a></span>
+            </div>
+            {{ end }}
+            {{ with .Params.instagram }}
+            <div class="wrap instagram">
+              <span class="icon"><img src="/td002/images/instagram.png" /></span>
+              <span class="person-detail"><a href="{{ .url }}"  id="instagram" data-instagram="{{ .url }}"> {{ .text }} </a></span>
+            </div>
+            {{ end }}
+            {{ with .Params.twitter }}
+              <div class="wrap twitter">
+                <span class="icon"><img src="/td002/images/twitter.png" /></span>
+                <span class="person-detail"><a href="{{ .url }}"  id="twitter" data-twitter="{{ .url }}"> {{ .text }}</a></span>
+              </div>
+            {{ end }}
+            
+            {{ with .Params.youtube }}
+              <div class="wrap youtube">
+                <span class="icon"><img src="/td002/images/youtube.png" /></span>
+                <span class="person-detail"><a href="{{ .url }}"  id="youtube" data-youtube="{{ .url }}"> {{ .text }}</a></span>
+              </div>
+            {{ end }}
+            {{ with .Params.linkedin }}
+              <div class="wrap linedin">
+                <span class="icon"><img src="/td002/images/linkedin.png" /></span>
+                <span class="person-detail"><a href="{{ .url }}"  id="linkedin" data-linkedin="{{ .url }}"> {{ .text }}</a></span>
+              </div>
+            {{ end }}
+           
+          </div>
+        </div>
+       {{ partial "whatsapp-section.html" .}}
+       <div class="bottom-bar">
+        <div class="blue-line"></div>
+        <div class="orange-line"></div>
+        <div class="red-line"></div>
+      </div>
+       {{ partial "card-footer.html" .}}
+      </div>
+    </div>
+    <script src="/js/card.js"></script>
+  </body>
+</html>

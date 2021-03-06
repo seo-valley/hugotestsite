@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  {{ partial "cards-head.html" .}}
+  <body data-no_follow_link="{{ .Params.link_nofollow }}">
+    <div class="main {{ .Params.company_name_show }}">
+      <div class="main-container">
+        <div class="bg-circle-wrap">
+          <div class="bg-circle top-right-circle"></div>
+          <div class="bg-circle top-left-circle"></div>
+        </div>
+        <div class="company-info-wrap">
+          <div class="company-info">
+            <div class="company-logo">
+              {{ with .Params.company_logo }}
+                <img src="{{ .img }}" alt="{{ .alt }}" id="company_logo" data-company_logo="{{ .img }}">
+              {{ end }}
+            </div>
+
+            <div class="company-detail">
+              {{ with .Params.company_name }}
+                <h1 class="company-name" id="company_name" data-company_name="{{ . }}">{{ . }}</h1>
+              {{ end }}
+              {{ with .Params.slogan }}
+                <p class="slogan" id="slogan" data-slogan="{{ . }}" >{{ . }}</p>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+        <div class="person-info-wrap">
+          <div class="person-main-info">
+            <div class="circle-wrap">
+              <div class="circle-1"></div>
+              <div class="circle-2"></div>
+            </div>
+
+            <div class="person-profile">
+              <div class="profile-circle"></div>
+              {{ with .Params.profile_photo }}
+                <img src="{{ .img }}" alt="{{ .alt }}" id="profile_photo" data-profile_photo="{{ .img }}" class="profile_photo">
+              {{ end }}
+            </div>
+            <div class="bg-circle-wrap">
+              <div class="bg-circle  bottom-left-circle "></div>
+            </div>
+            <div class="person-info">
+              <h2 class="title" id="full_name" data-full_name="{{ with .Params.first_name }}{{ . }}{{ end }}
+              {{ with .Params.last_name }}{{ . }}{{ end }}">{{ with .Params.first_name }}<span id="first_name" data-first_name="{{ . }}">{{ . }}</span>{{ end }}{{ with .Params.last_name }} <span id="last_name" data-last_name="{{ . }}">{{ . }}</span>{{ end }}</h2>
+
+             {{ with .Params.position }}
+              <p class="position" id="position" data-position="{{ . }}">{{ . }}</p>
+             {{ end }}
+             <div class="border-class"></div>
+             {{ with .Params.about }}
+                <p class="about"  id="about" data-about="{{ . }}">{{ . }}</p>
+             {{ end }}
+            </div>
+            <div class="bg-circle-wrap">
+              <div class="bg-circle  bottom-right-circle"></div>
+            </div>
+          </div>
+          <div class="person-contact-info-wrap">
+            <div class="person-contact-info">
+              <p class="address" id="address" data-address="{{ with .Params.address_line_1 }}{{ . }}{{ end }}{{ with .Params.address_line_2 }}{{ . }}{{ end }}{{ with .Params.country }}{{ . }}{{ end }}{{ with .Params.state }}{{ . }}{{ end }}{{ with .Params.city }}{{ . }}{{ end }}{{ with .Params.zip_code }}{{ . }}{{ end }}"> 
+              {{ with .Params.address_line_1 }}
+                <span id="address_line_1" data-address_line_1="{{ . }}" >{{ . }}</span>
+              {{ end }}
+              {{ with .Params.address_line_2 }}
+                <span id="address_line_2" data-address_line_2="{{ . }}">{{ . }}</span>
+              {{ end }}
+              {{ with .Params.city }}
+                <span id="city" data-city="{{ . }}">{{ . }}</span>
+              {{ end }}   
+              {{ with .Params.state }}
+                <span id="state" data-state="{{ . }}">{{ . }}</span>
+              {{ end }}
+              {{ with .Params.country }}
+                <span id="country" data-country="{{ . }}">{{ . }}</span>
+              {{ end }}
+              {{ with .Params.zip_code }}
+                <span id="zip_code" data-zip_code="{{ . }}">{{ . }}</span>
+              {{ end }}</p>
+              
+                
+              {{ with .Params.contact_no_1 }}
+                <div class="wrap">
+                  <span class="icon"><img src="/td003/images/phone.png" /></span>
+                  <span class="person-detail">
+                    <a href="tel:+{{ .url }}"  id="contact_no_1" data-contact_no_1="{{ .url }}" class="phone-detail contact_no">{{ .text }}</a>
+                  </span>
+                </div>
+              {{ end }}
+              {{ with .Params.contact_no_2 }}
+              <div class="wrap">
+                <span class="icon"><img src="/td003/images/phone.png" /></span>
+                <span class="person-detail">
+                  <a href="tel:+{{ .url }}"  id="contact_no_2" data-contact_no_2="{{ .url }}" class="phone-detail contact_no">{{ .text }}</a>
+                </span>
+              </div>
+              
+              {{ end }}
+              {{ with .Params.mail }}
+                <div class="wrap mail">
+                  <span class="icon"><img src="/td003/images/mail.png" /></span>
+                  <span class="person-detail"><a href="mailto:{{ .url }}" id="mail" data-mail="{{ .url }}">{{ .text }}</a></span>
+                </div>
+              {{ end }}
+              {{ with .Params.website }}
+                <div class="wrap">
+                  <span class="icon"><img src="/td003/images/website.png" /></span>
+                  <span class="person-detail"><a href="{{ .url }}" class="website" id="website" data-website="{{ .url }}" >{{ .text }}</a></span>
+                </div>
+              {{ end }}
+              {{ with .Params.facebook }}
+                <div class="wrap">
+                  <span class="icon"><img src="/td003/images/facebook.png" /></span>
+                  <span class="person-detail"><a href="{{ .url }}" class="facebook" id="facebook" data-facebook="{{ .url }}">{{ .text }}</a></span>
+                </div>
+              {{ end }}
+              {{ with .Params.twitter }}
+              <div class="wrap">
+                <span class="icon"><img src="/td003/images/twitter.png" /></span>
+                <span class="person-detail"><a href="{{ .url }}" class="twitter" id="twitter" data-twitter="{{ .url }}">{{ .text }}</a></span>
+              </div>
+              {{ end }}
+
+              {{ with .Params.linkedin }}
+                <div class="wrap">
+                  <span class="icon"><img src="/td003/images/linkedin.png"/></span>
+                  <span class="person-detail"><a href="{{ .url }}" class="linkedin" id="linkedin" data-linkedin="{{ .url }}">{{ .text }}</a></span>
+                </div>
+              {{ end }} 
+              {{ with .Params.instagram }}
+              <div class="wrap">
+                <span class="icon"><img src="/td003/images/instagram.png"/></span>
+                <span class="person-detail"><a href="{{ .url }}" class="instagram" id="instagram" data-instagram="{{ .url }}">{{ .text }}</a></span>
+              </div>
+            {{ end }} 
+            {{ with .Params.youtube }}  
+              <div class="wrap">
+                <span class="icon"><img src='/td003/images/youtube.png' /></span>
+                <span class="person-detail" ><a href="{{ .url }}" class="youtube" id="youtube" data-youtube="{{ .url }}">{{ .text }}</a></span>
+              </div>
+            {{ end }} 
+            </div>
+
+           {{ partial "whatsapp-section.html" .}}
+          </div>
+        </div>
+        <div class="bottom-bar">
+          <div class="blue-line"></div>
+          <div class="orange-line"></div>
+          <div class="red-line"></div>
+        </div>
+        {{ partial "card-footer.html" .}}
+      </div>
+    </div>
+
+    <script src="/js/card.js"></script>
+  </body>
+</html>
