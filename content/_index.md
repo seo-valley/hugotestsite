@@ -1,5 +1,5 @@
 ---
-title: "Hugo test Site"
+title: "Hugo test Site 1"
 featured_image: 'https://epic-bhaskara-64f2f9.netlify.app/images/gohugo-default-sample-hero-image.jpg'
 description: ""
 ---
